@@ -1,0 +1,406 @@
+-- Demonstration of SQL Syntax/Queries Pulled From Home Database (Include 3-5 Queries For Each Example From Home Database)
+
+-- SQL Select Statements 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- Select (Distinct)
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- Where 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- And
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- OR
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Not
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Insert Into
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Null Values 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Update Values 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Delete
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Select Top 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Min and Max
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Count 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Sum 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Avg 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Like 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Wildcards
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL In
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+--SQL Between 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Aliases 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Joins 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Inner Join 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Left Join 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Right Join 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Full Join 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Union
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Group By 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Having 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Exists
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Any, All 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Select Into 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Insert Into Select 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Case 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Stores Procedures 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Comments 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Operators 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Create DB 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Drop DB
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Backup DB 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Create Table 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Create Table 
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Drop Table 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Alter Table 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Constraints 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Not Null
+1.
+2. 
+3. 
+4. 
+5. 
+
+
+-- SQL Unique 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Primary Key
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Foreign Key
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Check
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Default 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Index 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Auto Increment 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Dates 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Views 
+1.
+2. 
+3. 
+4. 
+5. 
+
+-- SQL Data Types 
+1.
+2. 
+3. 
+4. 
+5. 
