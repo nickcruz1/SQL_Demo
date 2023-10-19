@@ -2,7 +2,7 @@
 
 -- SQL Select Statements 
 1. SELECT * FROM tbl_employees;
-2. 
+2. SELECT firstname AS First_Name, lastname AS Last_Name, address As Emp_Address from tbl_employees;
 3. 
 
 
@@ -13,7 +13,10 @@
 
 
 -- Where 
-1.
+1. SELECT PersonID, FirstName, Address, City, Salary 
+FROM tbl_employees 
+WHERE CITY IN ('Seaford','Bethany Beach', 'Greenwood')
+ORDER BY Salary ASC;
 2. 
 3. 
 
@@ -41,7 +44,8 @@
 -- SQL Insert Into
 INSERT INTO tbl_employees (PersonID, LastName, FirstName, Address, City, State_name) 
 VALUES (3, 'Cal','Bryan','25 Cedar Pike','Greenwood','Delaware');
-2. 
+2. INSERT INTO tbl_state (countyID, countyname, city, streetname, population, regionID)
+VALUES (10, 'New Castle', 'Bear', 'Benjamin Drive', 253, '5');
 3. 
  
 
@@ -53,7 +57,9 @@ VALUES (3, 'Cal','Bryan','25 Cedar Pike','Greenwood','Delaware');
 
 
 -- SQL Update Values 
-1.
+1. UPDATE tbl_employees
+SET Salary = 56125
+WHERE PersonID = 1;
 2. 
 3. 
  
@@ -105,28 +111,31 @@ VALUES (3, 'Cal','Bryan','25 Cedar Pike','Greenwood','Delaware');
  
 
 -- SQL Wildcards
-1.
-2. 
-3. 
-
+1. SELECT * FROM tbl_state
+WHERE CountyName LIKE '__w%astl_'
+OR CITY LIKE '%_ar';
+2. SELECT * FROM tbl_state
+WHERE CITY IN ('New Castle', 'Kent') 
+OR CITY LIKE 'B-D%';
+3. SELECT * FROM tbl_state
+WHERE CountyName IN ('New Castle', 'Kent') 
+OR CITY LIKE '[M]%';
 
 -- SQL In
-1.
+1. SELECT FirstName, Address, City
+FROM tbl_employees 
+WHERE CITY IN ('Rehoboth Beach', 'Milford', 'Seaford');
 2. 
 3. 
  
 
 
 --SQL Between 
-1.
-2. 
-3. 
-
-
-
--- SQL Aliases 
-1.
-2. 
+1. SELECT PersonID, LastName, City, Salary
+FROM tbl_employees 
+WHERE Salary BETWEEN 10000 AND 40000;
+2. SELECT CountyName FROM tbl_state 
+WHERE CountyID BETWEEN 10 AND 20;
 3. 
  
 
@@ -273,7 +282,8 @@ start with a dash (/) and then an asterik (*) afterwards then closed with
 
 
 -- SQL Alter Table 
-1.
+1. ALTER TABLE tbl_employees 
+ADD Salary int;
 2. 
 3. 
 
