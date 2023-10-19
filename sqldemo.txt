@@ -1,7 +1,7 @@
 -- Demonstration of SQL Syntax/Queries Pulled From Home Database (Include 3 Queries For Each Example From Home Database)
 
 -- SQL Select Statements 
-1.
+1. SELECT * FROM tbl_employees;
 2. 
 3. 
 
@@ -39,7 +39,8 @@
  
 
 -- SQL Insert Into
-1.
+INSERT INTO tbl_employees (PersonID, LastName, FirstName, Address, City, State_name) 
+VALUES (3, 'Cal','Bryan','25 Cedar Pike','Greenwood','Delaware');
 2. 
 3. 
  
@@ -212,43 +213,29 @@
 3. 
 
 
--- SQL Stores Procedures 
+-- SQL Stored Procedures 
 1.
 2. 
 3. 
 
 
 -- SQL Comments 
-1.
-2. 
-3. 
-
-
+1. -- This is a single line comment
+2. /* These are multi line comments. 
+You can write as much as you want as long as the comments
+start with a dash (/) and then an asterik (*) afterwards then closed with
+-> */
+3. -- More single line comments 
 
 -- SQL Operators 
 1.
 2. 
 3. 
 
-
-
--- SQL Create DB 
-1.
-2. 
-3. 
-
-
 -- SQL Drop DB
 1.
 2. 
 3. 
-
-
--- SQL Backup DB 
-1.
-2. 
-3. 
-
 
 -- SQL Create Table 
 1. CREATE TABLE tbl_employees (
@@ -267,8 +254,17 @@
     population int NOT NULL,
     Primary Key (nationID)
 );
-3. 
-
+3. CREATE TABLE tbl_region (
+    regionID int,
+    nationID int,
+    stateID int,
+    countyname varchar(255),
+    city varchar(255),
+    streetname varchar(255),
+    population int,
+    Primary Key (regionID),
+    Foreign Key (nationID) References tbl_nation(nationID)
+);
 
 -- SQL Drop Table 
 1.
@@ -277,12 +273,6 @@
 
 
 -- SQL Alter Table 
-1.
-2. 
-3. 
-
-
--- SQL Constraints 
 1.
 2. 
 3. 
@@ -324,12 +314,6 @@
 
 
 -- SQL Views 
-1.
-2. 
-3. 
-
-
--- SQL Data Types 
 1.
 2. 
 3. 
