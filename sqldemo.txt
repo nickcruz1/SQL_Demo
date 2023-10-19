@@ -300,7 +300,13 @@
     State_name varchar (255),
     Primary Key (PersonID)
 );
-2. 
+2. CREATE TABLE tbl_nation (
+    nationID int,
+    regionID int NOT NULL,
+    stateID int NOT NULL,
+    population int NOT NULL,
+    Primary Key (nationID)
+);
 3. 
 4. 
 5. 
