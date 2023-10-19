@@ -291,15 +291,15 @@
 5. 
 
 -- SQL Create Table 
-1.
-2. 
-3. 
-4. 
-5. 
-
-
--- SQL Create Table 
-1.
+1. CREATE TABLE tbl_employees (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255),
+    State_name varchar (255),
+    Primary Key (PersonID)
+);
 2. 
 3. 
 4. 
