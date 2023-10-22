@@ -1,15 +1,16 @@
 -- Demonstration of SQL Syntax/Queries Pulled From Home Database (Include 3 Queries For Each Example From Home Database)
 
 -- SQL Select Statements 
-`1. SELECT * FROM tbl_employees`
+1. SELECT * FROM tbl_employees
 2. SELECT firstname AS First_Name, lastname AS Last_Name, address As Emp_Address from tbl_employees;
-3. 
-
+3. SELECT COUNTYNAME, CITY, STREETNAME FROM 
+tbl_state;
+ 
 
 -- Select (Distinct)
 1. SELECT DISTINCT Address FROM tbl_employees;
-2. 
-3. 
+2. SELECT DISTINCT COUNTYID from tbl_state;
+3. SELECT DISTINCT DEPTNO FROM dept;
 
 
 -- Where 
@@ -23,22 +24,37 @@ ORDER BY Salary ASC;
 
 
 -- And
-1.
-2. 
-3. 
+1. SELECT PERSONID, LASTNAME, ADDRESS FROM
+tbl_employees WHERE CITY = 'Seaford' AND 
+SALARY > 110000;
+2. SELECT COUNTYID, COUNTYNAME, STREETNAME 
+FROM tbl_state WHERE Population > 150 OR
+CITY = 'Rehoboth Beach' AND CITY NOT IN 
+ORDER BY STREETNAME ASC;
+3. SELECT COUNTYID, COUNTYNAME, STREETNAME 
+FROM tbl_state WHERE CITY = 'Rehoboth Beach' AND Population BETWEEN 250 AND 500
+OR CITY NOT IN('Dover','Hartly')
+ORDER BY COUNTYID DESC;
 
 
 
 -- OR
-1.
-2. 
+1. SELECT COUNTYID, COUNTYNAME, CITY, STREETNAME, POPULATION 
+FROM tbl_state WHERE COUNTYNAME = 'Sussex' OR
+CITY IN('Rehoboth Beach', 'Hartly','Dover');
+2. SELECT COUNTYID, COUNTYNAME, STREETNAME 
+FROM tbl_state WHERE Population > 150 OR
+CITY = 'Rehoboth Beach' OR CITY = 'Dover'
+ORDER BY STREETNAME ASC;
 3. 
  
 
 -- SQL Not
-1.
+1. SELECT deptno Department_Number, item_category ItemCat , loc Item_Location 
+FROM dept WHERE item_category NOT IN (1, 3);
 2. 
-3. 
+3. SELECT SALARY FROM tbl_employees
+WHERE CITY NOT IN ('Milford');
  
 
 -- SQL Insert Into
@@ -78,29 +94,35 @@ WHERE PersonID = 1;
 
 
 -- SQL Min and Max
-1.
+1. 
 2. 
 3. 
  
 
 
 -- SQL Count 
-1.
-2. 
- 
+1. SELECT COUNT(PERSONID) FROM tbl_employees;
+2. SELECT COUNT(DISTINCT LOC) FROM dept;
+3. SELECT COUNT(CITY) FROM tbl_state;
 
 
 -- SQL Sum 
-1.
-2. 
-3. 
+1. SELECT SUM(POPULATION) FROM tbl_state
+WHERE CITY IN ('Bear' , 'Rehoboth Beach');
+2. SELECT SUM(SALARY) FROM tbl_employees
+WHERE CITY NOT IN ('Milford' , 'Rehoboth Beach');
+3. SELECT SUM(POPULATION) FROM tbl_state
+WHERE CITY = ('Dover');
 
 
 
 -- SQL Avg 
-1.
-2. 
-3. 
+1. SELECT AVG(POPULATION) FROM tbl_state
+WHERE CITY NOT IN ('Rehoboth Beach', 'Hartly');
+2. SELECT AVG(SALARY) FROM tbl_employees
+WHERE CITY IN('Greenwood' , 'Milford','Lewes');
+3. SELECT AVG(POPULATION) FROM tbl_state
+WHERE CITY IN ('Hartly', 'Dover');
  
 
 
@@ -288,11 +310,6 @@ ADD Salary int;
 3. 
 
 
--- SQL Not Null
-1.
-2. 
-3. 
-
 -- SQL Check
 1.
 2. 
@@ -300,12 +317,6 @@ ADD Salary int;
 
 
 -- SQL Default 
-1.
-2. 
-3. 
-
-
--- SQL Index 
 1.
 2. 
 3. 
