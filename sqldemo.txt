@@ -322,11 +322,6 @@ ADD Salary int;
 3. 
 
 
--- SQL Auto Increment 
-1.
-2. 
-3. 
-
 
 -- SQL Dates 
 1.
