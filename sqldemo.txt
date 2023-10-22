@@ -1,7 +1,7 @@
 -- Demonstration of SQL Syntax/Queries Pulled From Home Database (Include 3 Queries For Each Example From Home Database)
 
 -- SQL Select Statements 
-1. SELECT * FROM tbl_employees;
+`1. SELECT * FROM tbl_employees`
 2. SELECT firstname AS First_Name, lastname AS Last_Name, address As Emp_Address from tbl_employees;
 3. 
 
