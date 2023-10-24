@@ -1,4 +1,4 @@
--- Demonstration of SQL Syntax/Queries Pulled From Home Database (Include 3 Queries For Each Example From Home Database)
+-- Demonstration of SQL Syntax/Queries Pulled From Home Database (Include 3-5 Queries For Each Example From Home Database)
 
 -- SQL Select Statements 
 1. SELECT * FROM tbl_employees
