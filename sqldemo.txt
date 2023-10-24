@@ -5,13 +5,15 @@
 2. SELECT firstname AS First_Name, lastname AS Last_Name, address As Emp_Address from tbl_employees;
 3. SELECT COUNTYNAME, CITY, STREETNAME FROM 
 tbl_state;
- 
+4. 
+5.
 
 -- Select (Distinct)
 1. SELECT DISTINCT Address FROM tbl_employees;
 2. SELECT DISTINCT COUNTYID from tbl_state;
 3. SELECT DISTINCT DEPTNO FROM dept;
-
+4. 
+5.
 
 -- Where 
 1. SELECT PersonID, FirstName, Address, City, Salary 
@@ -20,6 +22,8 @@ WHERE CITY IN ('Seaford','Bethany Beach', 'Greenwood')
 ORDER BY Salary ASC;
 2. 
 3. 
+4. 
+5.
 
 
 
@@ -35,7 +39,8 @@ ORDER BY STREETNAME ASC;
 FROM tbl_state WHERE CITY = 'Rehoboth Beach' AND Population BETWEEN 250 AND 500
 OR CITY NOT IN('Dover','Hartly')
 ORDER BY COUNTYID DESC;
-
+4. 
+5.
 
 
 -- OR
@@ -47,7 +52,8 @@ FROM tbl_state WHERE Population > 150 OR
 CITY = 'Rehoboth Beach' OR CITY = 'Dover'
 ORDER BY STREETNAME ASC;
 3. 
- 
+4. 
+5.
 
 -- SQL Not
 1. SELECT deptno Department_Number, item_category ItemCat , loc Item_Location 
@@ -55,7 +61,8 @@ FROM dept WHERE item_category NOT IN (1, 3);
 2. 
 3. SELECT SALARY FROM tbl_employees
 WHERE CITY NOT IN ('Milford');
- 
+4. 
+5.
 
 -- SQL Insert Into
 INSERT INTO tbl_employees (PersonID, LastName, FirstName, Address, City, State_name) 
@@ -63,12 +70,15 @@ VALUES (3, 'Cal','Bryan','25 Cedar Pike','Greenwood','Delaware');
 2. INSERT INTO tbl_state (countyID, countyname, city, streetname, population, regionID)
 VALUES (10, 'New Castle', 'Bear', 'Benjamin Drive', 253, '5');
 3. 
- 
+4. 
+5.
 
 -- SQL Null Values 
 1.
 2. 
-3. 
+3.
+4. 
+5.
  
 
 
@@ -78,32 +88,38 @@ SET Salary = 56125
 WHERE PersonID = 1;
 2. 
 3. 
- 
+4. 
+5. 
 
 -- SQL Delete
 1.
 2. 
 3. 
-
+4. 
+5.
 
 -- SQL Select Top 
 1.
 2. 
 3. 
-
+4. 
+5.
 
 
 -- SQL Min and Max
 1. 
 2. 
 3. 
- 
+4. 
+5.
 
 
 -- SQL Count 
 1. SELECT COUNT(PERSONID) FROM tbl_employees;
 2. SELECT COUNT(DISTINCT LOC) FROM dept;
 3. SELECT COUNT(CITY) FROM tbl_state;
+4. 
+5.
 
 
 -- SQL Sum 
@@ -113,7 +129,8 @@ WHERE CITY IN ('Bear' , 'Rehoboth Beach');
 WHERE CITY NOT IN ('Milford' , 'Rehoboth Beach');
 3. SELECT SUM(POPULATION) FROM tbl_state
 WHERE CITY = ('Dover');
-
+4. 
+5.
 
 
 -- SQL Avg 
@@ -123,14 +140,16 @@ WHERE CITY NOT IN ('Rehoboth Beach', 'Hartly');
 WHERE CITY IN('Greenwood' , 'Milford','Lewes');
 3. SELECT AVG(POPULATION) FROM tbl_state
 WHERE CITY IN ('Hartly', 'Dover');
- 
+4. 
+5.
 
 
 -- SQL Like 
 1.
 2. 
 3. 
- 
+4. 
+5.
 
 -- SQL Wildcards
 1. SELECT * FROM tbl_state
@@ -142,6 +161,8 @@ OR CITY LIKE 'B-D%';
 3. SELECT * FROM tbl_state
 WHERE CountyName IN ('New Castle', 'Kent') 
 OR CITY LIKE '[M]%';
+4. 
+5.
 
 -- SQL In
 1. SELECT FirstName, Address, City
@@ -149,7 +170,8 @@ FROM tbl_employees
 WHERE CITY IN ('Rehoboth Beach', 'Milford', 'Seaford');
 2. 
 3. 
- 
+4. 
+5.
 
 
 --SQL Between 
@@ -159,114 +181,118 @@ WHERE Salary BETWEEN 10000 AND 40000;
 2. SELECT CountyName FROM tbl_state 
 WHERE CountyID BETWEEN 10 AND 20;
 3. 
- 
-
--- SQL Joins 
-1.
-2. 
-3. 
-
+4. 
+5.
 
 -- SQL Inner Join 
 1.
 2. 
 3. 
-
+4. 
+5.
 
 -- SQL Left Join 
 1.
 2. 
 3. 
-
+4. 
+5.
 
 
 -- SQL Right Join 
 1.
 2. 
 3. 
- 
+4. 
+5.
 
 -- SQL Full Join 
 1.
 2. 
 3. 
- 
+4. 
+5. 
 
 -- SQL Union
 1.
 2. 
 3. 
-
+4. 
+5.
 
 
 -- SQL Group By 
 1.
 2. 
 3. 
-
+4. 
+5.
 
 
 -- SQL Having 
 1.
 2. 
 3. 
-
+4. 
+5.
 
 
 -- SQL Exists
 1.
 2. 
 3. 
-
+4. 
+5.
 
 
 -- SQL Any, All 
 1.
 2. 
 3. 
-
+4. 
+5.
 
 -- SQL Select Into 
 1.
 2. 
 3. 
-
+4. 
+5.
 
 -- SQL Insert Into Select 
 1.
 2. 
 3. 
-
+4. 
+5.
 
 -- SQL Case 
 1.
 2. 
 3. 
-
+4. 
+5.
 
 -- SQL Stored Procedures 
 1.
 2. 
 3. 
-
-
--- SQL Comments 
-1. -- This is a single line comment
-2. /* These are multi line comments. 
-You can write as much as you want as long as the comments
-start with a dash (/) and then an asterik (*) afterwards then closed with
--> */
-3. -- More single line comments 
+4. 
+5.
 
 -- SQL Operators 
 1.
 2. 
 3. 
+4. 
+5.
 
 -- SQL Drop DB
 1.
 2. 
 3. 
+4. 
+5.
 
 -- SQL Create Table 
 1. CREATE TABLE tbl_employees (
@@ -296,41 +322,50 @@ start with a dash (/) and then an asterik (*) afterwards then closed with
     Primary Key (regionID),
     Foreign Key (nationID) References tbl_nation(nationID)
 );
+4. 
+5.
 
 -- SQL Drop Table 
 1.
 2. 
 3. 
-
+4. 
+5.
 
 -- SQL Alter Table 
 1. ALTER TABLE tbl_employees 
 ADD Salary int;
 2. 
 3. 
-
+4. 
+5.
 
 -- SQL Check
 1.
 2. 
-3. 
+3.
+4. 
+5.
 
 
 -- SQL Default 
 1.
 2. 
 3. 
-
+4. 
+5.
 
 
 -- SQL Dates 
 1.
 2. 
 3. 
-
+4. 
+5.
 
 -- SQL Views 
 1.
 2. 
 3. 
-
+4. 
+5.
