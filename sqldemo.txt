@@ -1,5 +1,13 @@
 -- Demonstration of SQL Syntax/Queries Pulled From Home Database (Include 3-5 Queries For Each Example From Home Database)
 
+
+
+
+DDL – Data Definition Language.
+
+
+
+***** DQL – Data Query Language. *****
 -- SQL Select Statements 
 1. SELECT * FROM tbl_employees
 2. SELECT firstname AS First_Name, lastname AS Last_Name, address As Emp_Address from tbl_employees;
@@ -14,6 +22,26 @@ tbl_state;
 3. SELECT DISTINCT DEPTNO FROM dept;
 4. 
 5.
+
+
+DML – Data Manipulation Language.
+
+
+DCL – Data Control Language.
+
+
+
+TCL – Transaction Control Language.
+
+
+
+
+
+
+
+
+
+
 
 -- Where 
 1. SELECT PersonID, FirstName, Address, City, Salary 
