@@ -3,8 +3,62 @@
 
 
 
-DDL – Data Definition Language.
+***** DDL – Data Definition Language. *****
 
+-- CREATE Table 
+1. CREATE TABLE tbl_employees (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255),
+    State_name varchar (255),
+    Primary Key (PersonID)
+);
+2. CREATE TABLE tbl_nation (
+    nationID int,
+    regionID int NOT NULL,
+    stateID int NOT NULL,
+    population int NOT NULL,
+    Primary Key (nationID)
+);
+3. CREATE TABLE tbl_region (
+    regionID int,
+    nationID int,
+    stateID int,
+    countyname varchar(255),
+    city varchar(255),
+    streetname varchar(255),
+    population int,
+    Primary Key (regionID),
+    Foreign Key (nationID) References tbl_nation(nationID)
+);
+4. 
+5.
+
+
+-- ALTER Table 
+1. ALTER TABLE tbl_employees 
+ADD Salary int;
+2. 
+3. 
+4. 
+5.
+
+
+--  DROP Table 
+1.
+2. 
+3. 
+4. 
+5.
+
+-- DROP DB
+1.
+2. 
+3. 
+4. 
+5.
 
 
 ***** DQL – Data Query Language. *****
@@ -15,162 +69,6 @@ DDL – Data Definition Language.
 tbl_state;
 4. 
 5.
-
--- Select (Distinct)
-1. SELECT DISTINCT Address FROM tbl_employees;
-2. SELECT DISTINCT COUNTYID from tbl_state;
-3. SELECT DISTINCT DEPTNO FROM dept;
-4. 
-5.
-
-
-DML – Data Manipulation Language.
-
-
-DCL – Data Control Language.
-
-
-
-TCL – Transaction Control Language.
-
-
-
-
-
-
-
-
-
-
-
--- Where 
-1. SELECT PersonID, FirstName, Address, City, Salary 
-FROM tbl_employees 
-WHERE CITY IN ('Seaford','Bethany Beach', 'Greenwood')
-ORDER BY Salary ASC;
-2. 
-3. 
-4. 
-5.
-
-
-
--- And
-1. SELECT PERSONID, LASTNAME, ADDRESS FROM
-tbl_employees WHERE CITY = 'Seaford' AND 
-SALARY > 110000;
-2. SELECT COUNTYID, COUNTYNAME, STREETNAME 
-FROM tbl_state WHERE Population > 150 OR
-CITY = 'Rehoboth Beach' AND CITY NOT IN 
-ORDER BY STREETNAME ASC;
-3. SELECT COUNTYID, COUNTYNAME, STREETNAME 
-FROM tbl_state WHERE CITY = 'Rehoboth Beach' AND Population BETWEEN 250 AND 500
-OR CITY NOT IN('Dover','Hartly')
-ORDER BY COUNTYID DESC;
-4. 
-5.
-
-
--- OR
-1. SELECT COUNTYID, COUNTYNAME, CITY, STREETNAME, POPULATION 
-FROM tbl_state WHERE COUNTYNAME = 'Sussex' OR
-CITY IN('Rehoboth Beach', 'Hartly','Dover');
-2. SELECT COUNTYID, COUNTYNAME, STREETNAME 
-FROM tbl_state WHERE Population > 150 OR
-CITY = 'Rehoboth Beach' OR CITY = 'Dover'
-ORDER BY STREETNAME ASC;
-3. 
-4. 
-5.
-
--- SQL Not
-1. SELECT deptno Department_Number, item_category ItemCat , loc Item_Location 
-FROM dept WHERE item_category NOT IN (1, 3);
-2. 
-3. SELECT SALARY FROM tbl_employees
-WHERE CITY NOT IN ('Milford');
-4. 
-5.
-
--- SQL Insert Into
-INSERT INTO tbl_employees (PersonID, LastName, FirstName, Address, City, State_name) 
-VALUES (3, 'Cal','Bryan','25 Cedar Pike','Greenwood','Delaware');
-2. INSERT INTO tbl_state (countyID, countyname, city, streetname, population, regionID)
-VALUES (10, 'New Castle', 'Bear', 'Benjamin Drive', 253, '5');
-3. 
-4. 
-5.
-
--- SQL Null Values 
-1.
-2. 
-3.
-4. 
-5.
- 
-
-
--- SQL Update Values 
-1. UPDATE tbl_employees
-SET Salary = 56125
-WHERE PersonID = 1;
-2. 
-3. 
-4. 
-5. 
-
--- SQL Delete
-1.
-2. 
-3. 
-4. 
-5.
-
--- SQL Select Top 
-1.
-2. 
-3. 
-4. 
-5.
-
-
--- SQL Min and Max
-1. 
-2. 
-3. 
-4. 
-5.
-
-
--- SQL Count 
-1. SELECT COUNT(PERSONID) FROM tbl_employees;
-2. SELECT COUNT(DISTINCT LOC) FROM dept;
-3. SELECT COUNT(CITY) FROM tbl_state;
-4. 
-5.
-
-
--- SQL Sum 
-1. SELECT SUM(POPULATION) FROM tbl_state
-WHERE CITY IN ('Bear' , 'Rehoboth Beach');
-2. SELECT SUM(SALARY) FROM tbl_employees
-WHERE CITY NOT IN ('Milford' , 'Rehoboth Beach');
-3. SELECT SUM(POPULATION) FROM tbl_state
-WHERE CITY = ('Dover');
-4. 
-5.
-
-
--- SQL Avg 
-1. SELECT AVG(POPULATION) FROM tbl_state
-WHERE CITY NOT IN ('Rehoboth Beach', 'Hartly');
-2. SELECT AVG(SALARY) FROM tbl_employees
-WHERE CITY IN('Greenwood' , 'Milford','Lewes');
-3. SELECT AVG(POPULATION) FROM tbl_state
-WHERE CITY IN ('Hartly', 'Dover');
-4. 
-5.
-
 
 -- SQL Like 
 1.
@@ -212,6 +110,83 @@ WHERE CountyID BETWEEN 10 AND 20;
 4. 
 5.
 
+
+-- SQL Select Top 
+1.
+2. 
+3. 
+4. 
+5.
+
+
+-- SQL Min and Max
+1. 
+2. 
+3. 
+4. 
+5.
+
+-- Select (Distinct)
+1. SELECT DISTINCT Address FROM tbl_employees;
+2. SELECT DISTINCT COUNTYID from tbl_state;
+3. SELECT DISTINCT DEPTNO FROM dept;
+4. 
+5.
+
+-- Where 
+1. SELECT PersonID, FirstName, Address, City, Salary 
+FROM tbl_employees 
+WHERE CITY IN ('Seaford','Bethany Beach', 'Greenwood')
+ORDER BY Salary ASC;
+2. 
+3. 
+4. 
+5.
+
+-- And
+1. SELECT PERSONID, LASTNAME, ADDRESS FROM
+tbl_employees WHERE CITY = 'Seaford' AND 
+SALARY > 110000;
+2. SELECT COUNTYID, COUNTYNAME, STREETNAME 
+FROM tbl_state WHERE Population > 150 OR
+CITY = 'Rehoboth Beach' AND CITY NOT IN 
+ORDER BY STREETNAME ASC;
+3. SELECT COUNTYID, COUNTYNAME, STREETNAME 
+FROM tbl_state WHERE CITY = 'Rehoboth Beach' AND Population BETWEEN 250 AND 500
+OR CITY NOT IN('Dover','Hartly')
+ORDER BY COUNTYID DESC;
+4. 
+5.
+
+-- OR
+1. SELECT COUNTYID, COUNTYNAME, CITY, STREETNAME, POPULATION 
+FROM tbl_state WHERE COUNTYNAME = 'Sussex' OR
+CITY IN('Rehoboth Beach', 'Hartly','Dover');
+2. SELECT COUNTYID, COUNTYNAME, STREETNAME 
+FROM tbl_state WHERE Population > 150 OR
+CITY = 'Rehoboth Beach' OR CITY = 'Dover'
+ORDER BY STREETNAME ASC;
+3. 
+4. 
+5.
+
+-- SQL Not
+1. SELECT deptno Department_Number, item_category ItemCat , loc Item_Location 
+FROM dept WHERE item_category NOT IN (1, 3);
+2. 
+3. SELECT SALARY FROM tbl_employees
+WHERE CITY NOT IN ('Milford');
+4. 
+5.
+
+
+
+
+
+
+
+***** DML – Data Manipulation Language. *****
+
 -- SQL Inner Join 
 1.
 2. 
@@ -241,53 +216,7 @@ WHERE CountyID BETWEEN 10 AND 20;
 4. 
 5. 
 
--- SQL Union
-1.
-2. 
-3. 
-4. 
-5.
-
-
 -- SQL Group By 
-1.
-2. 
-3. 
-4. 
-5.
-
-
--- SQL Having 
-1.
-2. 
-3. 
-4. 
-5.
-
-
--- SQL Exists
-1.
-2. 
-3. 
-4. 
-5.
-
-
--- SQL Any, All 
-1.
-2. 
-3. 
-4. 
-5.
-
--- SQL Select Into 
-1.
-2. 
-3. 
-4. 
-5.
-
--- SQL Insert Into Select 
 1.
 2. 
 3. 
@@ -301,82 +230,28 @@ WHERE CountyID BETWEEN 10 AND 20;
 4. 
 5.
 
--- SQL Stored Procedures 
-1.
-2. 
+--  INSERT Into
+INSERT INTO tbl_employees (PersonID, LastName, FirstName, Address, City, State_name) 
+VALUES (3, 'Cal','Bryan','25 Cedar Pike','Greenwood','Delaware');
+2. INSERT INTO tbl_state (countyID, countyname, city, streetname, population, regionID)
+VALUES (10, 'New Castle', 'Bear', 'Benjamin Drive', 253, '5');
 3. 
 4. 
 5.
 
--- SQL Operators 
-1.
+
+--  UPDATE Values 
+1. UPDATE tbl_employees
+SET Salary = 56125
+WHERE PersonID = 1;
 2. 
 3. 
 4. 
-5.
-
--- SQL Drop DB
-1.
-2. 
-3. 
-4. 
-5.
-
--- SQL Create Table 
-1. CREATE TABLE tbl_employees (
-    PersonID int,
-    LastName varchar(255),
-    FirstName varchar(255),
-    Address varchar(255),
-    City varchar(255),
-    State_name varchar (255),
-    Primary Key (PersonID)
-);
-2. CREATE TABLE tbl_nation (
-    nationID int,
-    regionID int NOT NULL,
-    stateID int NOT NULL,
-    population int NOT NULL,
-    Primary Key (nationID)
-);
-3. CREATE TABLE tbl_region (
-    regionID int,
-    nationID int,
-    stateID int,
-    countyname varchar(255),
-    city varchar(255),
-    streetname varchar(255),
-    population int,
-    Primary Key (regionID),
-    Foreign Key (nationID) References tbl_nation(nationID)
-);
-4. 
-5.
-
--- SQL Drop Table 
-1.
-2. 
-3. 
-4. 
-5.
-
--- SQL Alter Table 
-1. ALTER TABLE tbl_employees 
-ADD Salary int;
-2. 
-3. 
-4. 
-5.
-
--- SQL Check
-1.
-2. 
-3.
-4. 
-5.
+5. 
 
 
--- SQL Default 
+
+--  DELETE
 1.
 2. 
 3. 
@@ -384,16 +259,69 @@ ADD Salary int;
 5.
 
 
--- SQL Dates 
+
+
+
+***** DCL – Data Control Language. *****
+GRANT (Database Privileges) ...
+REVOKE (Database Privileges) ...
+
+
+
+
+
+***** TCL – Transaction Control Language. *****
+COMMIT
+ROLLBACK
+SAVEPOINT
+
+
+
+
+
+
+-- Aggregate functions
+
+-- COUNT
+1. SELECT COUNT(PERSONID) FROM tbl_employees;
+2. SELECT COUNT(DISTINCT LOC) FROM dept;
+3. SELECT COUNT(CITY) FROM tbl_state;
+4. 
+5.
+
+
+-- SUM
+1. SELECT SUM(POPULATION) FROM tbl_state
+WHERE CITY IN ('Bear' , 'Rehoboth Beach');
+2. SELECT SUM(SALARY) FROM tbl_employees
+WHERE CITY NOT IN ('Milford' , 'Rehoboth Beach');
+3. SELECT SUM(POPULATION) FROM tbl_state
+WHERE CITY = ('Dover');
+4. 
+5.
+
+
+-- AVG
+1. SELECT AVG(POPULATION) FROM tbl_state
+WHERE CITY NOT IN ('Rehoboth Beach', 'Hartly');
+2. SELECT AVG(SALARY) FROM tbl_employees
+WHERE CITY IN('Greenwood' , 'Milford','Lewes');
+3. SELECT AVG(POPULATION) FROM tbl_state
+WHERE CITY IN ('Hartly', 'Dover');
+4. 
+5.
+
+
+-- Stored Procedures 
 1.
 2. 
 3. 
 4. 
 5.
 
--- SQL Views 
-1.
-2. 
-3. 
-4. 
-5.
+
+
+
+
+
+
