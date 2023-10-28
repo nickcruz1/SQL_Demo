@@ -36,11 +36,11 @@
 4. 
 5.
 
-
 -- ALTER Table 
 1. ALTER TABLE tbl_employees 
 ADD Salary int;
-2. 
+2. ALTER TABLE tbl_employees
+ADD COUNTYID INT;
 3. 
 4. 
 5.
