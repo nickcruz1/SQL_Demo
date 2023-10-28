@@ -1,7 +1,7 @@
 -- Demonstration of SQL Syntax/Queries Pulled From Home Database (Include 3 Queries For Each Example From Home Database)
 
 
-***** DDL – Data Definition Language. *****
+***** DDL – Data Definition Language. ***
 
 -- CREATE Table Syntax
 1. CREATE TABLE tbl_employees (
