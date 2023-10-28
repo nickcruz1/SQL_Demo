@@ -135,11 +135,17 @@ ORDER BY COUNTYID DESC;
 1. SELECT COUNTYID, COUNTYNAME, CITY, STREETNAME, POPULATION 
 FROM tbl_state WHERE COUNTYNAME = 'Sussex' OR
 CITY IN('Rehoboth Beach', 'Hartly','Dover');
-2. SELECT COUNTYID, COUNTYNAME, STREETNAME 
+
+2. SELECT PersonID, LastName, FirstName, Address, City, State_Name, Salary
+FROM tbl_employees
+WHERE CITY IN ('Bethany Beach', 'Milford')
+AND LastName LIKE '%ol_' OR LastName LIKE 'Smi%'
+ORDER BY Salary ASC;
+
+3. SELECT COUNTYID, COUNTYNAME, STREETNAME 
 FROM tbl_state WHERE Population > 150 OR
 CITY = 'Rehoboth Beach' OR CITY = 'Dover'
 ORDER BY STREETNAME ASC;
-3. 
 
 
 -- SQL Not
@@ -220,18 +226,6 @@ WHERE CITY IN ('Seaford', 'Bethany Beach', 'Greenwood', 'Lewes', 'Rehoboth');
 1.
 2. 
 3. 
-
-
-
-***** DCL – Data Control Language. *****
-GRANT (Database Privileges) ...
-REVOKE (Database Privileges) ...
-
-
-***** TCL – Transaction Control Language. *****
-COMMIT
-ROLLBACK
-SAVEPOINT
 
 
 -- Aggregate functions
