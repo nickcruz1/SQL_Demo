@@ -1,11 +1,9 @@
--- Demonstration of SQL Syntax/Queries Pulled From Home Database (Include 3-5 Queries For Each Example From Home Database)
-
-
+-- Demonstration of SQL Syntax/Queries Pulled From Home Database (Include 3 Queries For Each Example From Home Database)
 
 
 ***** DDL – Data Definition Language. *****
 
--- CREATE Table 
+-- CREATE Table Syntax
 1. CREATE TABLE tbl_employees (
     PersonID int,
     LastName varchar(255),
@@ -34,36 +32,25 @@
     Foreign Key (nationID) References tbl_nation(nationID)
 );
 
-
 -- ALTER Table 
 1. ALTER TABLE tbl_employees 
 ADD Salary int;
 2. ALTER TABLE tbl_employees
 ADD COUNTYID INT;
-3. 
+3. ALTER TABLE tbl_state
+ADD citydescription varchar(255);
 
-
-
---  DROP Table 
-1.
-2. 
-3. 
-
-
--- DROP DB
-1.
-2. 
-3. 
-
-
+--  DROP Table / DB
+1. DROP TABLE tbl_region;
+2. DROP DATABASE my_test_db;
+3. DROP TABLE employee_other;
 
 ***** DQL – Data Query Language. *****
--- SQL Select Statements 
+-- SQL Select
 1. SELECT * FROM tbl_employees
 2. SELECT firstname AS First_Name, lastname AS Last_Name, address As Emp_Address from tbl_employees;
 3. SELECT COUNTYNAME, CITY, STREETNAME FROM 
 tbl_state;
-
 
 -- SQL Wildcards + Like + In
 1. SELECT * FROM tbl_state
@@ -78,46 +65,22 @@ OR CITY LIKE 'B-D%';
 WHERE CountyName IN ('New Castle', 'Kent') 
 OR CITY LIKE '[M]%';
 
-
---SQL Between 
+--SQL Where + Between 
 1. SELECT PersonID, LastName, City, Salary
 FROM tbl_employees 
 WHERE Salary BETWEEN 10000 AND 40000;
 2. SELECT CountyName FROM tbl_state 
 WHERE CountyID BETWEEN 10 AND 20;
-3. 
+3. SELECT * FROM tbl_employees
+WHERE PersonID 
+BETWEEN 4 AND 8;
 
-
-
--- SQL Select Top 
-1.
-2. 
-3. 
-
-
-
--- SQL Min and Max
-1. 
-2. 
-3. 
-
-
--- Select (Distinct)
+-- Select Distinct Values (DISTINCT)
 1. SELECT DISTINCT Address FROM tbl_employees;
 2. SELECT DISTINCT COUNTYID from tbl_state;
 3. SELECT DISTINCT DEPTNO FROM dept;
 
-
--- Where 
-1. SELECT PersonID, FirstName, Address, City, Salary 
-FROM tbl_employees 
-WHERE CITY IN ('Seaford','Bethany Beach', 'Greenwood')
-ORDER BY Salary ASC;
-2. 
-3. 
-
-
--- And
+-- And 
 1. SELECT PERSONID, LASTNAME, ADDRESS FROM
 tbl_employees WHERE CITY = 'Seaford' AND 
 SALARY > 110000;
@@ -148,45 +111,46 @@ CITY = 'Rehoboth Beach' OR CITY = 'Dover'
 ORDER BY STREETNAME ASC;
 
 
--- SQL Not
-1. SELECT deptno Department_Number, item_category ItemCat , loc Item_Location 
+-- NOT Operator + Aliases (Formal and Shorthand)
+1. SELECT deptno AS Department_Number, item_category AS ItemCat , loc AS Item_Location 
 FROM dept WHERE item_category NOT IN (1, 3);
-2. 
+2. SELECT Countyname County, Population Num, StreetName Street
+FROM tbl_state
+WHERE StreetName NOT IN  ('Benjamin Drive', 'Dasher Ct');
 3. SELECT SALARY FROM tbl_employees
-WHERE CITY NOT IN ('Milford');
-
-
-
+WHERE CITY NOT IN ('Milford', 'Seaford');
 
 ***** DML – Data Manipulation Language. *****
 
 
--- SQL Inner Join 
+-- SQL Joins
+
+-- Inner Join 
 1.
 2. 
 3. 
 
 
--- SQL Left Join 
+-- Left Join 
 1.
 2. 
 3. 
 
 
 
--- SQL Right Join 
+-- Right Join 
 1.
 2. 
 3. 
 
 
--- SQL Full Join 
+-- Full Join 
 1.
 2. 
 3. 
 
 
--- SQL Group By 
+-- Group By 
 1.
 2. 
 3. 
@@ -198,7 +162,7 @@ WHERE CITY NOT IN ('Milford');
 3. 
 
 
---  INSERT INTO/INSERT ALL (One value or multiple)
+--  INSERT INTO/INSERT ALL (Adding one record or multiple)
 1. INSERT INTO tbl_employees (PersonID, LastName, FirstName, Address, City, State_name) 
 VALUES (3, 'Cal','Bryan','25 Cedar Pike','Greenwood','Delaware');
 2. INSERT INTO tbl_state (countyID, countyname, city, streetname, population, regionID)
@@ -210,7 +174,6 @@ INTO tbl_employees (PERSONID, CITY) VALUES ( 11, 'Wilmington')
 SELECT * FROM dual;
 
 
-
 --  UPDATE Values 
 1. UPDATE tbl_employees
 SET Salary = 56125
@@ -218,38 +181,40 @@ WHERE PersonID = 1;
 2. UPDATE tbl_employees
 SET COUNTYID = 30 
 WHERE CITY IN ('Seaford', 'Bethany Beach', 'Greenwood', 'Lewes', 'Rehoboth');
-3. 
+3. UPDATE tbl_region
+SET region_location = 'East'
+WHERE RegionID = 4;
 
 
+--  DELETE (One specific record or delete all records in a database)
+1. DELETE FROM tbl_region
+WHERE region_location = 'NorthEast';
+2. DELETE FROM tbl_state
+WHERE StreetName = '4th street';
+3. DELETE FROM Extra_Table;
 
---  DELETE
-1.
-2. 
-3. 
 
-
--- Aggregate functions
+-- Common Aggregate functions (COUNT, SUM, AVG, MAX, MIN)
 
 -- COUNT
-1. SELECT COUNT(PERSONID) FROM tbl_employees;
-2. SELECT COUNT(DISTINCT LOC) FROM dept;
-3. SELECT COUNT(CITY) FROM tbl_state;
+1. SELECT COUNT(CITY) FROM tbl_state;
 
 -- SUM
-1. SELECT SUM(POPULATION) FROM tbl_state
+2. SELECT SUM(POPULATION) FROM tbl_state
 WHERE CITY IN ('Bear' , 'Rehoboth Beach');
-2. SELECT SUM(SALARY) FROM tbl_employees
-WHERE CITY NOT IN ('Milford' , 'Rehoboth Beach');
-3. SELECT SUM(POPULATION) FROM tbl_state
-WHERE CITY = ('Dover');
 
 -- AVG
-1. SELECT AVG(POPULATION) FROM tbl_state
-WHERE CITY NOT IN ('Rehoboth Beach', 'Hartly');
-2. SELECT AVG(SALARY) FROM tbl_employees
-WHERE CITY IN('Greenwood' , 'Milford','Lewes');
 3. SELECT AVG(POPULATION) FROM tbl_state
-WHERE CITY IN ('Hartly', 'Dover');
+WHERE CITY NOT IN ('Rehoboth Beach', 'Hartly');
+
+-- MAX
+4. SELECT MAX(Population)
+FROM tbl_state;
+
+-- MIN
+5. SELECT MIN(Salary)
+FROM tbl_employees;
+
 
 
 
