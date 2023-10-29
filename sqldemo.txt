@@ -155,8 +155,12 @@ WHERE CITY NOT IN ('Milford', 'Seaford');
 FROM tbl_employees
 GROUP BY City
 ORDER BY COUNT(PersonID)ASC;
-2. 
-3. 
+2. SELECT CountyID, Max(Salary)
+FROM tbl_employees
+GROUP BY CountyID;
+3. SELECT City, Max(Salary)
+FROM tbl_employees
+GROUP BY City;
 
 
 --  INSERT INTO/INSERT ALL (Adding one record or multiple)
