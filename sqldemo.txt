@@ -151,13 +151,10 @@ WHERE CITY NOT IN ('Milford', 'Seaford');
 
 
 -- Group By 
-1.
-2. 
-3. 
-
-
--- SQL Case 
-1.
+1. SELECT AVG(Salary), City
+FROM tbl_employees
+GROUP BY City
+ORDER BY COUNT(PersonID)ASC;
 2. 
 3. 
 
