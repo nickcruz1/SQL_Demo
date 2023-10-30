@@ -1,0 +1,269 @@
+-- Demonstration of SQL Syntax/Queries Pulled From Home Database (Include 3 Queries For Each Type Of SQL Command From Home Database)
+
+
+-- DDL – Data Definition Language. --
+
+-- CREATE Table Syntax
+
+CREATE TABLE tbl_employees (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255),
+    State_name varchar (255),
+    Primary Key (PersonID)
+);
+
+CREATE TABLE tbl_nation (
+    nationID int,
+    regionID int NOT NULL,
+    stateID int NOT NULL,
+    population int NOT NULL,
+    Primary Key (nationID)
+);
+
+CREATE TABLE tbl_region (
+    regionID int,
+    nationID int,
+    stateID int,
+    countyname varchar(255),
+    city varchar(255),
+    streetname varchar(255),
+    population int,
+    Primary Key (regionID),
+    Foreign Key (nationID) References tbl_nation(nationID)
+);
+
+-- ALTER Table 
+
+ ALTER TABLE tbl_employees 
+ADD Salary int;
+
+ ALTER TABLE tbl_employees
+ADD COUNTYID INT;
+
+ALTER TABLE tbl_state
+ADD citydescription varchar(255);
+
+--  DROP Table / DB
+
+DROP TABLE tbl_region;
+
+DROP DATABASE my_test_db;
+
+DROP TABLE employee_other;
+
+-- DQL – Data Query Language. 
+
+
+-- SQL Select
+
+SELECT * FROM tbl_employees
+
+SELECT firstname AS First_Name, lastname AS Last_Name, address As Emp_Address from tbl_employees;
+
+SELECT COUNTYNAME, CITY, STREETNAME FROM 
+tbl_state;
+
+-- SQL Wildcards + Like + In
+
+SELECT * FROM tbl_state
+WHERE CountyName LIKE '__w%astl_'
+OR CITY LIKE '%_ar';
+
+SELECT * FROM tbl_state
+WHERE CITY IN ('New Castle', 'Kent') 
+OR CITY LIKE 'B-D%';
+
+SELECT * FROM tbl_state
+WHERE CountyName IN ('New Castle', 'Kent') 
+OR CITY LIKE '[M]%';
+
+--SQL Where + Between 
+
+SELECT PersonID, LastName, City, Salary
+FROM tbl_employees 
+WHERE Salary BETWEEN 10000 AND 40000;
+
+SELECT CountyName FROM tbl_state 
+WHERE CountyID BETWEEN 10 AND 20;
+
+SELECT * FROM tbl_employees
+WHERE PersonID 
+BETWEEN 4 AND 8;
+
+-- Select Distinct Values (DISTINCT)
+
+SELECT DISTINCT Address FROM tbl_employees;
+
+SELECT DISTINCT COUNTYID from tbl_state;
+
+SELECT DISTINCT DEPTNO FROM dept;
+
+-- And 
+
+SELECT PERSONID, LASTNAME, ADDRESS FROM
+tbl_employees WHERE CITY = 'Seaford' AND 
+SALARY > 110000;
+
+SELECT COUNTYID, COUNTYNAME, STREETNAME 
+FROM tbl_state WHERE Population > 150 OR
+CITY = 'Rehoboth Beach' AND CITY NOT IN 
+ORDER BY STREETNAME ASC;
+
+SELECT COUNTYID, COUNTYNAME, STREETNAME 
+FROM tbl_state WHERE CITY = 'Rehoboth Beach' AND Population BETWEEN 250 AND 500
+OR CITY NOT IN('Dover','Hartly')
+ORDER BY COUNTYID DESC;
+
+
+-- OR
+SELECT COUNTYID, COUNTYNAME, CITY, STREETNAME, POPULATION 
+FROM tbl_state WHERE COUNTYNAME = 'Sussex' OR
+CITY IN('Rehoboth Beach', 'Hartly','Dover');
+
+SELECT PersonID, LastName, FirstName, Address, City, State_Name, Salary
+FROM tbl_employees
+WHERE CITY IN ('Bethany Beach', 'Milford')
+AND LastName LIKE '%ol_' OR LastName LIKE 'Smi%'
+ORDER BY Salary ASC;
+
+SELECT COUNTYID, COUNTYNAME, STREETNAME 
+FROM tbl_state WHERE Population > 150 OR
+CITY = 'Rehoboth Beach' OR CITY = 'Dover'
+ORDER BY STREETNAME ASC;
+
+
+-- NOT Operator + Aliases (Formal and Shorthand)
+
+SELECT deptno AS Department_Number, item_category AS ItemCat , loc AS Item_Location 
+FROM dept WHERE item_category NOT IN (1, 3);
+
+SELECT Countyname County, Population Num, StreetName Street
+FROM tbl_state
+WHERE StreetName NOT IN  ('Benjamin Drive', 'Dasher Ct');
+
+SELECT SALARY FROM tbl_employees
+WHERE CITY NOT IN ('Milford', 'Seaford');
+
+-- DML – Data Manipulation Language. 
+
+
+-- SQL Joins
+
+-- Inner Join 
+1.
+2. 
+3. 
+
+
+-- Left Join 
+1.
+2. 
+3. 
+
+
+
+-- Right Join 
+1.
+2. 
+3. 
+
+
+-- Full Join 
+1.
+2. 
+3. 
+
+
+-- Group By 
+
+SELECT AVG(Salary), City
+FROM tbl_employees
+GROUP BY City
+ORDER BY COUNT(PersonID)ASC;
+
+SELECT CountyID, Max(Salary)
+FROM tbl_employees
+GROUP BY CountyID;
+
+SELECT City, Max(Salary)
+FROM tbl_employees
+GROUP BY City;
+
+
+--  INSERT INTO/INSERT ALL (Adding one record or multiple)
+INSERT INTO tbl_employees (PersonID, LastName, FirstName, Address, City, State_name) 
+VALUES (3, 'Cal','Bryan','25 Cedar Pike','Greenwood','Delaware');
+
+INSERT INTO tbl_state (countyID, countyname, city, streetname, population, regionID)
+VALUES (10, 'New Castle', 'Bear', 'Benjamin Drive', 253, '5');
+
+INSERT ALL 
+INTO tbl_employees (PERSONID, CITY) VALUES (9, 'Bear')
+INTO tbl_employees (PERSONID, CITY) VALUES ( 10, 'Newark')
+INTO tbl_employees (PERSONID, CITY) VALUES ( 11, 'Wilmington')
+SELECT * FROM dual;
+
+
+--  UPDATE Values 
+
+UPDATE tbl_employees
+SET Salary = 56125
+WHERE PersonID = 1;
+
+UPDATE tbl_employees
+SET COUNTYID = 30 
+WHERE CITY IN ('Seaford', 'Bethany Beach', 'Greenwood', 'Lewes', 'Rehoboth');
+
+UPDATE tbl_region
+SET region_location = 'East'
+WHERE RegionID = 4;
+
+
+--  DELETE (One specific record or delete all records in a database)
+
+DELETE FROM tbl_region
+WHERE region_location = 'NorthEast';
+
+DELETE FROM tbl_state
+WHERE StreetName = '4th street';
+
+DELETE FROM Extra_Table;
+
+
+-- Common Aggregate functions (COUNT, SUM, AVG, MAX, MIN)
+
+-- COUNT
+
+SELECT COUNT(CITY) FROM tbl_state;
+
+-- SUM
+
+SELECT SUM(POPULATION) FROM tbl_state
+WHERE CITY IN ('Bear' , 'Rehoboth Beach');
+
+-- AVG
+
+SELECT AVG(POPULATION) FROM tbl_state
+WHERE CITY NOT IN ('Rehoboth Beach', 'Hartly');
+
+-- MAX
+
+SELECT MAX(Population)
+FROM tbl_state;
+
+-- MIN
+
+SELECT MIN(Salary)
+FROM tbl_employees;
+
+
+
+
+
+
+
+
+
