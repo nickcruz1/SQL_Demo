@@ -1,9 +1,8 @@
--- Demonstration of SQL Syntax/Queries Pulled From Home Database (Include 3 Queries For Each Type Of SQL Command From Home Database)
-
+SQL Syntax/List of Past SQL Queries
 
 -- DDL – Data Definition Language. --
 
--- CREATE Table Syntax
+-- CREATE 
 
 CREATE TABLE tbl_employees (
     PersonID int,
@@ -35,7 +34,7 @@ CREATE TABLE tbl_region (
     Foreign Key (nationID) References tbl_nation(nationID)
 );
 
--- ALTER Table 
+-- ALTER 
 
  ALTER TABLE tbl_employees 
 ADD Salary int;
@@ -46,7 +45,7 @@ ADD COUNTYID INT;
 ALTER TABLE tbl_state
 ADD citydescription varchar(255);
 
---  DROP Table / DB
+-- DROP 
 
 DROP TABLE tbl_region;
 
@@ -57,7 +56,7 @@ DROP TABLE employee_other;
 -- DQL – Data Query Language. 
 
 
--- SQL Select
+-- SELECT
 
 SELECT * FROM tbl_employees
 
@@ -66,7 +65,7 @@ SELECT firstname AS First_Name, lastname AS Last_Name, address As Emp_Address fr
 SELECT COUNTYNAME, CITY, STREETNAME FROM 
 tbl_state;
 
--- SQL Wildcards + Like + In
+-- Wildcard Characters + LIKE + IN
 
 SELECT * FROM tbl_state
 WHERE CountyName LIKE '__w%astl_'
@@ -80,7 +79,7 @@ SELECT * FROM tbl_state
 WHERE CountyName IN ('New Castle', 'Kent') 
 OR CITY LIKE '[M]%';
 
---SQL Where + Between 
+--WHERE + BETWEEN
 
 SELECT PersonID, LastName, City, Salary
 FROM tbl_employees 
@@ -93,7 +92,7 @@ SELECT * FROM tbl_employees
 WHERE PersonID 
 BETWEEN 4 AND 8;
 
--- Select Distinct Values (DISTINCT)
+-- DISTINCT
 
 SELECT DISTINCT Address FROM tbl_employees;
 
@@ -101,7 +100,7 @@ SELECT DISTINCT COUNTYID from tbl_state;
 
 SELECT DISTINCT DEPTNO FROM dept;
 
--- And 
+-- AND
 
 SELECT PERSONID, LASTNAME, ADDRESS FROM
 tbl_employees WHERE CITY = 'Seaford' AND 
@@ -119,6 +118,7 @@ ORDER BY COUNTYID DESC;
 
 
 -- OR
+
 SELECT COUNTYID, COUNTYNAME, CITY, STREETNAME, POPULATION 
 FROM tbl_state WHERE COUNTYNAME = 'Sussex' OR
 CITY IN('Rehoboth Beach', 'Hartly','Dover');
@@ -147,12 +147,15 @@ WHERE StreetName NOT IN  ('Benjamin Drive', 'Dasher Ct');
 SELECT SALARY FROM tbl_employees
 WHERE CITY NOT IN ('Milford', 'Seaford');
 
+
 -- DML – Data Manipulation Language. 
 
 
 -- SQL Joins
 
--- Inner Join 
+
+-- INNER JOIN
+
 1. SELECT tbl_employees.City 
 FROM tbl_employees
 INNER JOIN tbl_state
@@ -167,7 +170,8 @@ INNER JOIN oehr_inventories
 ON oehr_products.Product_ID = oehr_inventories.Product_ID;
 
 
--- Left Join 
+-- LEFT JOIN
+
 1. SELECT tbl_employees.City 
 FROM tbl_employees
 LEFT JOIN tbl_state
@@ -182,7 +186,8 @@ LEFT JOIN oehr_inventories
 ON oehr_products.Product_ID = oehr_inventories.Product_ID;
 
 
--- Right Join 
+-- RIGHT JOIN
+
 1. SELECT tbl_employees.City 
 FROM tbl_employees
 RIGHT JOIN tbl_state
@@ -197,7 +202,8 @@ RIGHT JOIN oehr_inventories
 ON oehr_products.Product_ID = oehr_inventories.Product_ID;
 
 
--- Full Join 
+-- FULL OUTER JOIN
+
 1. SELECT tbl_state.Region_Location
 FROM tbl_state
 FULL OUTER JOIN tbl_region
@@ -212,7 +218,7 @@ FULL OUTER JOIN oehr_inventories
 ON oehr_products.Product_ID = oehr_inventories.Product_ID;
 
 
--- Group By 
+-- GROUP BY
 
 SELECT AVG(Salary), City
 FROM tbl_employees
@@ -229,6 +235,7 @@ GROUP BY City;
 
 
 --  INSERT INTO/INSERT ALL (Adding one record or multiple)
+
 INSERT INTO tbl_employees (PersonID, LastName, FirstName, Address, City, State_name) 
 VALUES (3, 'Cal','Bryan','25 Cedar Pike','Greenwood','Delaware');
 
@@ -242,7 +249,7 @@ INTO tbl_employees (PERSONID, CITY) VALUES ( 11, 'Wilmington')
 SELECT * FROM dual;
 
 
---  UPDATE Values 
+--  UPDATE 
 
 UPDATE tbl_employees
 SET Salary = 56125
