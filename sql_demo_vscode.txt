@@ -161,7 +161,10 @@ ON tbl_employees.city = tbl_state.city;
 FROM oehr_orders
 INNER JOIN oehr_order_items
 ON oehr_orders.Order_ID = oehr_order_items.Order_ID;
-3. 
+3. SELECT oehr_products.Product_ID 
+FROM oehr_products
+INNER JOIN oehr_inventories
+ON oehr_products.Product_ID = oehr_inventories.Product_ID;
 
 
 -- Left Join 
@@ -173,8 +176,10 @@ ON tbl_employees.city = tbl_state.city;
 FROM oehr_orders
 LEFT JOIN oehr_order_items
 ON oehr_orders.Order_ID = oehr_order_items.Order_ID;
-3. 
-
+3. SELECT oehr_products.Product_ID
+FROM oehr_products
+LEFT JOIN oehr_inventories
+ON oehr_products.Product_ID = oehr_inventories.Product_ID;
 
 
 -- Right Join 
@@ -186,7 +191,10 @@ ON tbl_employees.city = tbl_state.city;
 FROM oehr_orders
 RIGHT JOIN oehr_order_items
 ON oehr_orders.Order_ID = oehr_order_items.Order_ID;
-3. 
+3. SELECT oehr_products.Product_ID
+FROM oehr_products
+RIGHT JOIN oehr_inventories
+ON oehr_products.Product_ID = oehr_inventories.Product_ID;
 
 
 -- Full Join 
@@ -198,7 +206,10 @@ ON tbl_state.Region_Location = tbl_region.Region_Location;
 FROM oehr_orders
 FULL OUTER JOIN oehr_order_items
 ON oehr_orders.Order_ID = oehr_order_items.Order_ID;
-3. 
+3. SELECT oehr_products.Product_ID
+FROM oehr_products
+FULL OUTER JOIN oehr_inventories
+ON oehr_products.Product_ID = oehr_inventories.Product_ID;
 
 
 -- Group By 
