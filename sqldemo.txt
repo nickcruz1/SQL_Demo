@@ -122,32 +122,67 @@ WHERE CITY NOT IN ('Milford', 'Seaford');
 
 ***** DML – Data Manipulation Language. *****
 
-
 -- SQL Joins
 
 -- Inner Join 
-1.
-2. 
-3. 
+1. SELECT tbl_employees.City 
+FROM tbl_employees
+INNER JOIN tbl_state
+ON tbl_employees.city = tbl_state.city;
+2. SELECT oehr_orders.Order_ID
+FROM oehr_orders
+INNER JOIN oehr_order_items
+ON oehr_orders.Order_ID = oehr_order_items.Order_ID;
+3. SELECT oehr_products.Product_ID 
+FROM oehr_products
+INNER JOIN oehr_inventories
+ON oehr_products.Product_ID = oehr_inventories.Product_ID;
 
 
 -- Left Join 
-1.
-2. 
-3. 
-
+1. SELECT tbl_employees.City 
+FROM tbl_employees
+LEFT JOIN tbl_state
+ON tbl_employees.city = tbl_state.city;
+2. SELECT oehr_orders.Order_ID
+FROM oehr_orders
+LEFT JOIN oehr_order_items
+ON oehr_orders.Order_ID = oehr_order_items.Order_ID;
+3. SELECT oehr_products.Product_ID
+FROM oehr_products
+LEFT JOIN oehr_inventories
+ON oehr_products.Product_ID = oehr_inventories.Product_ID;
 
 
 -- Right Join 
-1.
-2. 
-3. 
+1. SELECT tbl_employees.City 
+FROM tbl_employees
+RIGHT JOIN tbl_state
+ON tbl_employees.city = tbl_state.city;
+2. SELECT oehr_orders.Order_ID
+FROM oehr_orders
+RIGHT JOIN oehr_order_items
+ON oehr_orders.Order_ID = oehr_order_items.Order_ID;
+3. SELECT oehr_products.Product_ID
+FROM oehr_products
+RIGHT JOIN oehr_inventories
+ON oehr_products.Product_ID = oehr_inventories.Product_ID;
 
 
 -- Full Join 
-1.
-2. 
-3. 
+1. SELECT tbl_state.Region_Location
+FROM tbl_state
+FULL OUTER JOIN tbl_region
+ON tbl_state.Region_Location = tbl_region.Region_Location;
+2. SELECT oehr_orders.Order_ID
+FROM oehr_orders
+FULL OUTER JOIN oehr_order_items
+ON oehr_orders.Order_ID = oehr_order_items.Order_ID;
+3. SELECT oehr_products.Product_ID
+FROM oehr_products
+FULL OUTER JOIN oehr_inventories
+ON oehr_products.Product_ID = oehr_inventories.Product_ID;
+
 
 
 -- Group By 
