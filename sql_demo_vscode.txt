@@ -153,27 +153,51 @@ WHERE CITY NOT IN ('Milford', 'Seaford');
 -- SQL Joins
 
 -- Inner Join 
-1.
-2. 
+1. SELECT tbl_employees.City 
+FROM tbl_employees
+INNER JOIN tbl_state
+ON tbl_employees.city = tbl_state.city;
+2. SELECT oehr_orders.Order_ID
+FROM oehr_orders
+INNER JOIN oehr_order_items
+ON oehr_orders.Order_ID = oehr_order_items.Order_ID;
 3. 
 
 
 -- Left Join 
-1.
-2. 
+1. SELECT tbl_employees.City 
+FROM tbl_employees
+LEFT JOIN tbl_state
+ON tbl_employees.city = tbl_state.city;
+2. SELECT oehr_orders.Order_ID
+FROM oehr_orders
+LEFT JOIN oehr_order_items
+ON oehr_orders.Order_ID = oehr_order_items.Order_ID;
 3. 
 
 
 
 -- Right Join 
-1.
-2. 
+1. SELECT tbl_employees.City 
+FROM tbl_employees
+RIGHT JOIN tbl_state
+ON tbl_employees.city = tbl_state.city;
+2. SELECT oehr_orders.Order_ID
+FROM oehr_orders
+RIGHT JOIN oehr_order_items
+ON oehr_orders.Order_ID = oehr_order_items.Order_ID;
 3. 
 
 
 -- Full Join 
-1.
-2. 
+1. SELECT tbl_state.Region_Location
+FROM tbl_state
+FULL OUTER JOIN tbl_region
+ON tbl_state.Region_Location = tbl_region.Region_Location;
+2. SELECT oehr_orders.Order_ID
+FROM oehr_orders
+FULL OUTER JOIN oehr_order_items
+ON oehr_orders.Order_ID = oehr_order_items.Order_ID;
 3. 
 
 
