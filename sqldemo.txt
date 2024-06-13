@@ -51,6 +51,7 @@ ADD citydescription varchar(255);
 2. SELECT firstname AS First_Name, lastname AS Last_Name, address As Emp_Address from tbl_employees;
 3. SELECT COUNTYNAME, CITY, STREETNAME FROM 
 tbl_state;
+4. SELECT CITY, COUNTYNAME FROM tbl_state;
 
 -- SQL Wildcards + Like + In
 1. SELECT * FROM tbl_state
