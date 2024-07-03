@@ -4,4 +4,4 @@
 
 ### Languages Used: SQL
 
-### Type oF SQL Database Used: Oracle
+### Type of SQL Database Used: Oracle
